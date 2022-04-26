@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-12">
             <list-blog v-for="(post, index) in posts"
+                       :id="post.id"
                        :title="post.title"
                        :content="post.content"
                        :key="index">

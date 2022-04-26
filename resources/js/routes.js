@@ -1,6 +1,7 @@
 import VueRouter from "vue-router";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
+import SingleBlog from "./components/Blog/SingleBlog";
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
         path: '/blog',
         component: Blog,
         name: 'blog'
+    },
+    {
+        path: '/blog/:id',
+        component: SingleBlog,
+        name: 'single-blog'
     }
 ]
 

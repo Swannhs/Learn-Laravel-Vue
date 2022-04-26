@@ -1,13 +1,15 @@
 <template>
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">
-                {{title}}
-            </h4>
+            <router-link :to="`blog/${id}`">
+                <h4 class="card-title">
+                    {{ title }}
+                </h4>
+            </router-link>
         </div>
         <div class="card-body">
             <p>
-                {{content}}
+                {{ content }}
             </p>
         </div>
     </div>
@@ -17,6 +19,10 @@
 export default {
     name: "ListBlog",
     props: {
+        id: {
+            type: Number,
+            required: true
+        },
         title: {
             type: String,
             required: true
@@ -30,5 +36,8 @@ export default {
 </script>
 
 <style scoped>
+a {
+    text-decoration: none;
+}
 
 </style>

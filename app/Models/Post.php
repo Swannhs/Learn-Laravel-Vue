@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    function getSinglePost($id)
+    {
+        return $this->where('id', $id)->first();
+    }
 }

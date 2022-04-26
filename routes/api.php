@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,4 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('posts', function (Request $request) {
     return Post::all();
+});
+
+Route::get('post/{id}', function (Request $request, $id) {
+    return Post::all()->find($id);
 });
