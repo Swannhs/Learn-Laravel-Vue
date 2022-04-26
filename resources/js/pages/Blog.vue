@@ -15,28 +15,34 @@
 
 <script>
 import ListBlog from "../components/Blog/ListBlog";
+import axios from "axios";
 
 export default {
     name: "Blog",
     data() {
         return {
-            posts: [
-                {
-                    title: "This is dummy title",
-                    content: "This is dummy content"
-                },
-                {
-                    title: "This is dummy title",
-                    content: "This is dummy content"
-                },
-                {
-                    title: "This is dummy title",
-                    content: "This is dummy content"
-                }
-            ]
+            posts: []
         };
     },
-    components: {ListBlog}
+    components: {ListBlog},
+    methods: {
+        getPosts() {
+            axios.get('/api/posts', {
+                headers: {
+                    Accept: 'application/json'
+                }
+            })
+                .then(response => {
+                    this.posts = response.data;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+    },
+    created() {
+        this.getPosts();
+    }
 }
 </script>
 
