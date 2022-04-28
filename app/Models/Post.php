@@ -9,8 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
-    function getSinglePost($id)
+    public function comments()
     {
-        return $this->where('id', $id)->first();
+        return $this->hasMany(Comment::class);
     }
 }
