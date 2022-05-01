@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PostIndexResource;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -11,9 +12,7 @@ class PostController extends Controller
 
     public function index()
     {
-        return PostIndexResource::collection(
-            Post::all()
-        );
+        return PostIndexResource::collection(Post::all());
     }
 
     public function create()
@@ -28,7 +27,8 @@ class PostController extends Controller
 
     public function show($id)
     {
-        return Post::find($id)->first();
+        $comments = User::find($id)->posts;
+        return PostIndexResource::collection($comments);
     }
 
     public function edit($id)

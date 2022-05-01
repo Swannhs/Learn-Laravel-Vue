@@ -10,8 +10,10 @@ class PostIndexResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'user_id' => $this->user_id,
+            'slug' => $this->slug,
             'title' => $this->title,
-            'content' => $this->content
+            'content' => $this->content,
         ];
     }
 }

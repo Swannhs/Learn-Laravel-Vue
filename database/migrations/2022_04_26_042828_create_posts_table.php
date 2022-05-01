@@ -18,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('content');
+            $table->string('slug');
+            $table->unsignedBigInteger('user_id');
         });
     }
 
