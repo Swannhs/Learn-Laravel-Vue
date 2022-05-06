@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('product_description');
             $table->double('product_price', 15, 2);
             $table->tinyInteger('status')->default(1);
+            $table->integer('category_id');
             $table->timestamps();
         });
     }

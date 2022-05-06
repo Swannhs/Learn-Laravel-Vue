@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class)->withDefault([
+            'id' => 0,
+            'category_name' => 'Uncategorized',
+            'category_slug' => 'uncategorized',
+        ]);
+    }
 }
