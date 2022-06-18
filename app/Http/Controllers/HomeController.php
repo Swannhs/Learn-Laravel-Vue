@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function welcomeApi()
+    {
+        return response()->json(['message' => 'Welcome to our API']);
+    }
 }
