@@ -43,6 +43,12 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
+    protected $visible = [
+        'id',
+        'name',
+        'email',
+    ];
+
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
@@ -61,5 +67,35 @@ class User extends Authenticatable implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    /**
+     * Get the posts of the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    /**
+     * Get the comments of the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    /**
+     * Get the votes of the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function votes()
+    {
+        return $this->hasMany(Vote::class);
     }
 }
