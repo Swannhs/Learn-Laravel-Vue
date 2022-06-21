@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0aae484f3f57793cdb6b9eef989b3c71",
+    "content-hash": "19d6fc73e43930dec1bcd8fbd8cc1caf",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -121,6 +121,37 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "calcinai/strut",
+            "version": "v0.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/calcinai/strut.git",
+                "reference": "6cd70c104d5537b71fc55d09c0112de9e25acc7e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/calcinai/strut/zipball/6cd70c104d5537b71fc55d09c0112de9e25acc7e",
+                "reference": "6cd70c104d5537b71fc55d09c0112de9e25acc7e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Calcinai\\Strut\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library for creating and manipulating Swagger schemas",
+            "support": {
+                "issues": "https://github.com/calcinai/strut/issues",
+                "source": "https://github.com/calcinai/strut/tree/master"
+            },
+            "time": "2018-01-15T20:29:15+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -956,6 +987,78 @@
                 }
             ],
             "time": "2022-03-20T21:55:58+00:00"
+        },
+        {
+            "name": "hcesrl/laravel-swagger-api",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/HCESrl/laravel-swagger-api.git",
+                "reference": "4e588447afadbb0066ccd6d7c375b16a6c4a6190"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/HCESrl/laravel-swagger-api/zipball/4e588447afadbb0066ccd6d7c375b16a6c4a6190",
+                "reference": "4e588447afadbb0066ccd6d7c375b16a6c4a6190",
+                "shasum": ""
+            },
+            "require": {
+                "calcinai/strut": "^0.2",
+                "ext-json": "*",
+                "illuminate/contracts": "^5.5|^6.0|^7.0|^8.0",
+                "illuminate/filesystem": "^5.5|^6.0|^7.0|^8.0",
+                "illuminate/http": "^5.5|^6.0|^7.0|^8.0",
+                "illuminate/routing": "^5.5|^6.0|^7.0|^8.0",
+                "illuminate/support": "^5.5|^6.0|^7.0|^8.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^4.3|^5.5|^6.3",
+                "phpunit/phpunit": "^8.0",
+                "swagger-api/swagger-ui": "^3.18"
+            },
+            "suggest": {
+                "fruitcake/laravel-cors": "Required to send CORS headers (^1.0)"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelApi\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "Api": "LaravelApi\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelApi\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabio Savina",
+                    "email": "fabio.savina@gmail.com"
+                }
+            ],
+            "description": "API Swagger UI package for Laravel.",
+            "homepage": "https://github.com/HCESrl/laravel-swagger-api",
+            "keywords": [
+                "api",
+                "laravel",
+                "swagger",
+                "ui"
+            ],
+            "support": {
+                "issues": "https://github.com/HCESrl/laravel-swagger-api/issues",
+                "source": "https://github.com/HCESrl/laravel-swagger-api/tree/v1.2.3"
+            },
+            "time": "2020-12-19T14:01:53+00:00"
         },
         {
             "name": "laravel/framework",
@@ -3048,6 +3151,88 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "5.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "cb86fd87b43fcfc493c3f2b1de6fad100c078146"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/cb86fd87b43fcfc493c3f2b1de6fad100c078146",
+                "reference": "cb86fd87b43fcfc493c3f2b1de6fad100c078146",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^7.0|^8.0|^9.0",
+                "illuminate/container": "^7.0|^8.0|^9.0",
+                "illuminate/contracts": "^7.0|^8.0|^9.0",
+                "illuminate/database": "^7.0|^8.0|^9.0",
+                "php": "^7.3|^8.0|^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0|^6.0|^7.0",
+                "phpunit/phpunit": "^9.4",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "5.x-dev",
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 6.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/5.5.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-05-16T12:09:59+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
