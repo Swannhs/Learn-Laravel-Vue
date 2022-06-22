@@ -18,6 +18,7 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence,
             'slug' => $this->faker->slug,
             'content' => $this->faker->paragraph,
+            'publish' => $this->faker->boolean,
             'user_id' => $this->faker->numberBetween(1, 10),
         ];
     }

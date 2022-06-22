@@ -18,4 +18,25 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvX
 GET http://localhost:8000/api/users/1
 Content-Type: application/json,
 Accept: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY1NTg0MTE3OSwiZXhwIjoxNjU1ODQ0Nzc5LCJuYmYiOjE2NTU4NDExNzksImp0aSI6IndSRDdLQTR1ZnpMTjYzTzYiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RNi9ZXeZF2kbdz1NXNLUbN7Rqig0VpMBjqQKblMCbBM
+
+### Get all posts
+GET http://localhost:8000/api/posts
+Content-Type: application/json,
+Accept: application/json
+
+### Get single post
+GET http://localhost:8000/api/posts/et-illum-unde-magni-voluptatem-provident-ullam-sint
+Content-Type: application/json,
+Accept: application/json
+
+### Add post
+POST http://localhost:8000/api/posts
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY1NTkyNTE0MCwiZXhwIjoxNjU1OTI4NzQwLCJuYmYiOjE2NTU5MjUxNDAsImp0aSI6IjFxSGRCSWlQR01GVnRWVVUiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RmBVPIJspd4NsaBq-y1D5F22yJydDmTjgpFYHbSSIos
+
+{
+    "title": "test title",
+    "slug": "test slug",
+    "content": "test content"
+}

@@ -9,6 +9,13 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'content',
+        'user_id',
+    ];
+
 
     /**
      * Get the user that owns the post.

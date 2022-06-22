@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->text('content');
+            $table->boolean('publish');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
