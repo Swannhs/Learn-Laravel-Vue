@@ -21,6 +21,16 @@ class UserSeeder extends Seeder
             'email' => 'admin@email.com',
             'password' => Hash::make('admin'),
         ]);
+        DB::table('users')->insert([
+            'name' => 'editor',
+            'email' => 'editor@email.com',
+            'password' => Hash::make('editor'),
+        ]);
+        DB::table('users')->insert([
+            'name' => 'user',
+            'email' => 'user@email.com',
+            'password' => Hash::make('user'),
+        ]);
         User::factory()->count(100)->create();
     }
 }

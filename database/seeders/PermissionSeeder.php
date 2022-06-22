@@ -16,11 +16,11 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        Permission::create(['name' => 'administer']);
+        Permission::create(['name' => 'admin']);
         Permission::create(['name' => 'editor']);
         Permission::create(['name' => 'user']);
 
-        Role::create(['name' => 'admin'])->givePermissionTo('administer');
+        Role::create(['name' => 'admin'])->givePermissionTo('admin');
         Role::create(['name' => 'editor'])->givePermissionTo('editor');
         Role::create(['name' => 'user'])->givePermissionTo('user');
     }

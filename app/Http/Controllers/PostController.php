@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Log;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['role:admin', 'role:editor'], ['only' => ['index']]);
+        $this->middleware('auth:api', ['only' => ['store', 'update', 'destroy']]);
+    }
 
     public function index(Request $request)
     {

@@ -14,7 +14,16 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::find(1);
-        $user->assignRole('admin');
+        $admin = User::find(1);
+        $admin->assignRole('admin');
+        $admin->givePermissionTo('admin');
+
+        $editor = User::find(2);
+        $editor->assignRole('editor');
+        $editor->givePermissionTo('editor');
+
+        $user = User::find(3);
+        $user->assignRole('user');
+        $user->givePermissionTo('user');
     }
 }

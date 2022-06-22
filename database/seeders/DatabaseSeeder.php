@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             CommentSeeder::class,
             VoteSeeder::class,
             PermissionSeeder::class,
+            AdminSeeder::class
         ]);
     }
 }
