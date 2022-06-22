@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
 {
@@ -22,12 +22,17 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
-    protected function respondWithToken($token): \Illuminate\Http\JsonResponse
+    public function refresh()
+    {
+        return $this->respondWithToken(Auth::refresh());
+    }
+
+    protected function respondWithToken($token): JsonResponse
     {
         return response()->json([
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 600
         ]);
     }
 }

@@ -16,8 +16,9 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
-            'slug' => Str::slug($this->faker->sentence),
+            'slug' => $this->faker->slug,
             'content' => $this->faker->paragraph,
+            'user_id' => $this->faker->numberBetween(1, 10),
         ];
     }
 }

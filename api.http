@@ -1,0 +1,21 @@
+### Login with credential
+POST http://localhost:8000/api/auth/login
+Content-Type: application/json,
+Accept: application/json
+
+{
+    "email": "editor@email.com",
+    "password": "editor"
+}
+
+### Get all users
+GET http://localhost:8000/api/users
+Content-Type: application/json,
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY1NTg0MTE3OSwiZXhwIjoxNjU1ODQ0Nzc5LCJuYmYiOjE2NTU4NDExNzksImp0aSI6IndSRDdLQTR1ZnpMTjYzTzYiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RNi9ZXeZF2kbdz1NXNLUbN7Rqig0VpMBjqQKblMCbBM
+
+### Get single user
+GET http://localhost:8000/api/users/1
+Content-Type: application/json,
+Accept: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY1NTg0MTE3OSwiZXhwIjoxNjU1ODQ0Nzc5LCJuYmYiOjE2NTU4NDExNzksImp0aSI6IndSRDdLQTR1ZnpMTjYzTzYiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.RNi9ZXeZF2kbdz1NXNLUbN7Rqig0VpMBjqQKblMCbBM
