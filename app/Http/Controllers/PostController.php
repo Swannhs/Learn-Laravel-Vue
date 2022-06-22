@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 
 class PostController extends Controller
@@ -13,6 +11,7 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware(['role:admin|editor'], ['only' => ['store']]);
+        $this->middleware(['role:admin'], ['only' => ['update', 'destroy']]);
         $this->middleware('auth:api', ['only' => ['store', 'update', 'destroy']]);
     }
 
@@ -55,14 +54,26 @@ class PostController extends Controller
             'content' => 'required|string|max:255',
         ]);
 
-        Log::debug($request->user());
+        $post = Post::create([
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'content' => $request->content,
+            'user_id' => $request->user()->id,
+        ]);
 
-//        $post = Post::create([
-//            'title' => $request->title,
-//            'slug' => $request->slug,
-//            'content' => $request->content,
-//            'user_id' => $request->user()->id,
-//        ]);
+        $response = array();
+
+        if ($post) {
+            $response['status'] = 'success';
+            $response['message'] = 'Post created successfully';
+
+            response()->json($response, ResponseAlias::HTTP_CREATED);
+        } else {
+            $response['status'] = 'error';
+            $response['message'] = 'Error creating post';
+
+            response()->json($response, ResponseAlias::HTTP_INTERNAL_SERVER_ERROR);
+        }
     }
 
     public function show($slug)
@@ -87,11 +98,44 @@ class PostController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $response = array();
+
+        $post = Post::find($id);
+
+        if ($post) {
+            $post->publish = true;
+            $post->save();
+
+            $response['status'] = 'success';
+            $response['message'] = 'Post has been published';
+
+            response()->json($response, ResponseAlias::HTTP_OK);
+        } else {
+            $response['status'] = 'unavailable';
+            $response['message'] = 'Post not found';
+
+            response()->json($response, ResponseAlias::HTTP_NOT_FOUND);
+        }
     }
 
     public function destroy($id)
     {
-        //
+        $response = array();
+
+        $post = Post::find($id);
+
+        if ($post) {
+            $post->delete();
+
+            $response['status'] = 'success';
+            $response['message'] = 'Post has been deleted';
+
+            response()->json($response, ResponseAlias::HTTP_OK);
+        } else {
+            $response['status'] = 'unavailable';
+            $response['message'] = 'Post not found';
+
+            response()->json($response, ResponseAlias::HTTP_NOT_FOUND);
+        }
     }
 }
